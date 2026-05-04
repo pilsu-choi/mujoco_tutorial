@@ -56,6 +56,28 @@ MuJoCo Humanoid-v5
 
 ![MLflow Humanoid runs metrics](./docs/imgs/09_mlflow_humanoid_runs_metrics.png)
 
+## Prerequisites
+### MuJoCo 설치
+MuJoCo는 Python 패키지(mujoco)로 설치되며, 별도의 라이선스 없이 사용할 수 있습니다.
+```bash
+pip install mujoco
+```
+또는 이 프로젝트는 uv를 사용하므로 uv sync 시 자동으로 설치됩니다.
+WSL2/WSLg 환경에서 GUI viewer를 사용하려면 아래 Ubuntu 패키지가 필요합니다.
+```bash
+sudo apt update
+sudo apt install -y libgl1 libglfw3 libglew2.2 libosmesa6
+```
+headless 렌더링(GUI 없이 rollout 수집)만 사용하는 경우에는 libosmesa6만 있으면 충분합니다.
+
+### uv 설치
+패키지 관리는 uv를 사용합니다. 설치되어 있지 않다면 아래 명령으로 설치합니다.
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+### Python 버전
+Python 3.10 이상을 권장합니다
+
 ## Setup
 
 ```bash
@@ -162,10 +184,10 @@ uv run mlflow ui \
 
 브라우저에서 `http://localhost:5000`을 열면 PPO 학습/평가 run, reward metric, model/evaluation artifact를 확인할 수 있습니다.
 
-## Portfolio Output
+## Output
 
-포트폴리오 PPT는 아래 경로에 생성했습니다.
+소개 자료는 아래 경로에 생성했습니다.
 
 ```text
-docs/MuJoCo_Humanoid_RL_MLOps_Portfolio.pptx
+docs/MuJoCo_MLops.pdf
 ```
